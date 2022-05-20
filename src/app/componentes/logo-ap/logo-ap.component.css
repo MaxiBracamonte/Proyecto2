@@ -1,4 +1,4 @@
-.container{
+.contenedor{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,6 +7,11 @@
 .redes{
     margin-right: 0.5em;
 }
+
+.redes img{
+    margin: 0.1em;
+}
+
 #logoAP{
     width: 150px;   
 }
@@ -21,7 +26,7 @@ img{
 
 /*--- Para la vista del celular--*/
 @media(max-width: 575px) {
-    .container{
+    .contenedor{
         flex-direction: column;
     }
     .redes{
