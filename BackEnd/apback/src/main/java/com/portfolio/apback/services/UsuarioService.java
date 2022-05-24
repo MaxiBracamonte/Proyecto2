@@ -1,6 +1,7 @@
 
 package com.portfolio.apback.services;
 
+import com.portfolio.apback.exceptions.UserNotFoundException;
 import com.portfolio.apback.models.Usuario;
 import com.portfolio.apback.repositories.UsuarioRepo;
 
@@ -21,7 +22,7 @@ public class UsuarioService {
         this.usuarioRepo = usuarioRepo;       
     }
     
-    public Usuario addUser(Usuario usuario){
+    public Usuario addUsuario (Usuario usuario){
     
         return usuarioRepo.save(usuario);    
     }
@@ -34,12 +35,16 @@ public class UsuarioService {
     
     public Usuario editarUsuario(Usuario usuario){
     
-    return usuarioRepo.save(usuario);    
+        return usuarioRepo.save(usuario);    
     }
     
     public void borrarUsuario(Long id){
         
         usuarioRepo.deleteById(id);
+    }
+    
+    public Usuario buscarUsuarioPorId(Long id){
+        return usuarioRepo.findById(id).orElseThrow(() ->new UserNotFoundException("Usuario no encontrado"));
     }
     
 }
