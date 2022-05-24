@@ -26,7 +26,7 @@ public class ExperienciaService {
         return experienciaRepo.save(experiencia);    
     }
     
-    public List<Experiencia> buscarExperiencia(){
+    public List<Experiencia> buscarExperiencias(){
     
         return experienciaRepo.findAll();
     }
